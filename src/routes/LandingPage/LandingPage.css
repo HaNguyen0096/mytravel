@@ -1,0 +1,33 @@
+.landingImage{
+  background-image: url('ha-long-bay.jpg');
+  min-height: 380px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; 
+  /* Needed to position the navbar */
+  position: relative;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.landingPage{
+  text-align: center;
+}
+
+.welcomeText{
+  font-size: 50px;
+  padding-top: 300px;
+}
+
+.hrLine{
+  width: 50%;
+  border: 1px solid white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.landingPage-Script{
+  font-size: 20px;
+}

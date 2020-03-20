@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  margin: 0;
+}
+
+.loginNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(32,207,116);
+  font-size: 23px;
+  margin: 0;
+  padding: 0;
+}
+
+.home-nav{
+  text-decoration: none;
+  margin: 10px;
+}
+
+.home-nav:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+.public-nav{
+  text-decoration: none;
+  margin: 10px;
+}
+
+.public-nav:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+.my-nav{
+  text-decoration: none;
+  margin: 10px;
+}
+
+.my-nav:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+
+
