@@ -25,7 +25,7 @@ const ApiService = {
       )     
   },
 
-  postLog(latitude, longitude, title, description, image, rating, visited_day) {
+  postLog(latitude, longitude, title, description, image, rating, visited_day, publicc) {
     return fetch(`${config.API_ENDPOINT}/logs`, {
       method: 'POST',
       headers: {
@@ -38,7 +38,8 @@ const ApiService = {
         description,
         image,
         rating,
-        visited_day
+        visited_day,
+        public: publicc,
       }),
     })
     .then(res =>

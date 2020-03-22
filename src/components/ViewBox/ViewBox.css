@@ -1,1 +1,10 @@
 @import '~antd/dist/antd.css';
+
+.view{
+  background-color:rgb(18, 168, 91);
+}
+
+.viewBox{
+  display: flex;
+  justify-content: center;
+}

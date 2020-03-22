@@ -6,12 +6,16 @@
   margin: 0;
 }
 
+.title{
+  margin-left: 10px;
+}
+
 .loginNav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(32,207,116);
-  font-size: 23px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
@@ -19,31 +23,34 @@
 .home-nav{
   text-decoration: none;
   margin: 10px;
+  color: black;
 }
 
 .home-nav:hover{
   background-color: #ddd;
-  color: black;
+  color: #0C0C5C;
 }
 
 .public-nav{
   text-decoration: none;
   margin: 10px;
+  color: black;
 }
 
 .public-nav:hover{
   background-color: #ddd;
-  color: black;
+  color: #0C0C5C;
 }
 
 .my-nav{
   text-decoration: none;
   margin: 10px;
+  color: black;
 }
 
 .my-nav:hover{
   background-color: #ddd;
-  color: black;
+  color: #0C0C5C;
 }
 
 

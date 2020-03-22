@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
-import {Section} from '../../components/Utils/Utils'
-
-
+import './LogPage.css'
 
 export default class LogPage extends Component {
   static defaultProps = {
@@ -14,23 +12,28 @@ export default class LogPage extends Component {
 
   static contextType = LogsContext
 
-   componentDidMount() {
+  componentDidMount() {
       const {id} = this.props.match.params
-      console.log(id)
       this.context.clearError()
-    ApiService.getLog(id)
+      ApiService.getLog(id)
         .then(this.context.setLog)
         .catch(this.context.setError)
-   }
+  }
+
+  goBack = () => {
+    this.props.history.goBack();
+  }
 
   render() {
     const {log} = this.context
-    console.log(log)
+    
     return (
       <div className='logPage'>
-        {log && log.title}
-        {log && log.description}
-        {log && log.visited_day}
+        <h1>{log && log.title}</h1>
+        <p>{log && log.description}</p>
+        <p> {log && log.visited_day}</p>
+        {log && log.image && <img className='logPage-image' src={log.image} alt='log.title'/>}
+        <button onClick={this.goBack}>Back</button>
       </div>
     );
   }

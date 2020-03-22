@@ -9,7 +9,7 @@ export default class ViewLogBtn extends Component {
     
     return (
       <div>
-        <Button type='primary'><Link to={path}>View More</Link></Button>
+        <Button className='Btn' type='primary'><Link to={path}>View More</Link></Button>
       </div>
     )
   }

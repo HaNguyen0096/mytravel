@@ -35,4 +35,8 @@ export function Textarea({ className, ...props }) {
   )
 }
 
+export const getPublicLogs = (logs=[]) => (
+  logs.filter(log => log.public === true)
+)
+
 

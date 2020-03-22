@@ -28,8 +28,8 @@ export default class Header extends Component{
     return (
       <div className='header'>
         <div className='container'>
-          <div className="loginNav">
-            <div className="title">My Travels</div>
+          <div className='loginNav'>
+            <div className='title'>My Travels</div>
             {this.renderLogs()}
           </div>
         </div>

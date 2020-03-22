@@ -7,6 +7,7 @@ import PublicPage_ListView from '../../routes/PublicPage_ListView/PublicPage_Lis
 import PersonalPage_MapView from '../../routes/PersonalPage_MapView/PersonalPage_MapView'
 import PersonalPage_ListView from '../../routes/PersonalPage_ListView/PersonalPage_LisView'
 import LogPage from '../../routes/LogPage/LogPage'
+import AddLogPage from '../../routes/AddLogPage/AddLogPage'
 //import LoginPage from '../../routes/LoginPage/LoginPage'
 //import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
@@ -67,6 +68,11 @@ class App extends Component {
               path={'/logs/:id'}
               component={LogPage}
             /> 
+            <Route
+              exact
+              path={'/addlog'}
+              component={AddLogPage}
+            />
             <Route
               component={NotFoundPage}
             />

@@ -4,6 +4,7 @@ import { Section } from '../../components/Utils/Utils'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
 import ViewBox from '../../components/ViewBox/ViewBox'
+import { getPublicLogs } from '../../components/Utils/Utils'
 
 export default class PublicPage_ListView extends Component {
   static defaultProps = {
@@ -20,8 +21,8 @@ export default class PublicPage_ListView extends Component {
 
   renderLogList(){
     const {logs} = this.context 
-    console.log(this.context)
-    return logs.map(log =>
+    const publicLogs = getPublicLogs(logs)
+    return publicLogs.map(log =>
       <ListView 
         key = {log.id}
         log = {log}
@@ -31,7 +32,6 @@ export default class PublicPage_ListView extends Component {
 
   render() {
     const viewPath = this.props.match.path
-
     return (
       <Section>
         <ViewBox viewPath={viewPath}/>

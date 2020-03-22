@@ -4,6 +4,7 @@ import { Section } from '../../components/Utils/Utils'
 import ViewBox from '../../components/ViewBox/ViewBox'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
+import './PersonalPage_MapView.css'
 
 export default class PersonalPage_MapView extends Component {
   static defaultProps = {
@@ -24,7 +25,8 @@ export default class PersonalPage_MapView extends Component {
     return (
       <Section>
         <ViewBox viewPath={viewPath}/>
-        <MapView logs={logs}/>
+        <h1 className='personal-mapview-description'>Double click on the pins to add a log</h1>
+        {logs.length>0 && <MapView viewPath={viewPath} logs={logs}/>}
       </Section>
     )
   }

@@ -4,7 +4,7 @@ import { Section } from '../../components/Utils/Utils'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
 import ViewBox from '../../components/ViewBox/ViewBox'
-import AddLog from '../../components/AddLog/AddLog'
+import AddLogBtn from '../../components/AddLogBtn/AddLogBtn'
 
 export default class PersonalPage_ListView extends Component {
   static defaultProps = {
@@ -21,7 +21,6 @@ export default class PersonalPage_ListView extends Component {
 
   renderLogList(){
     const {logs} = this.context 
-    console.log(this.context)
     return logs.map(log =>
       <ListView 
         key = {log.id}
@@ -36,7 +35,7 @@ export default class PersonalPage_ListView extends Component {
       <Section>
         <ViewBox viewPath={viewPath}/>
         {this.renderLogList()}
-        <AddLog />
+        <AddLogBtn />
       </Section>
     )
   }
