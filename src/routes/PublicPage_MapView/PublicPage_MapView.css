@@ -1,3 +1,28 @@
-.public-mapview-description{
-  text-align: center;
+.viewTop{
+  display: flex;
+  background-color: rgb(32,207,116);
+  border: 1px dashed;
 }
+
+.viewDescription{
+  font-size: 8px;
+  margin: 10px auto 0 auto;
+}
+
+.viewBox{
+  margin: auto 5px auto 5px;
+}
+
+@media only screen and (min-width: 480px) {
+  .viewDescription{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .viewDescription{
+    font-size: 18px;
+  }
+}
+
+

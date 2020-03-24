@@ -33,7 +33,10 @@ export default class PersonalPage_ListView extends Component {
     const viewPath = this.props.match.path
     return (
       <Section>
-        <ViewBox viewPath={viewPath}/>
+        <div className='viewTop'>
+          <div className='viewBox'><ViewBox  viewPath={viewPath}/></div>
+          <div className='viewDescription'><h1>See beautiful places that you have visited!</h1></div>
+        </div>
         {this.renderLogList()}
         <AddLogBtn className='AddLogBtn'/>
       </Section>

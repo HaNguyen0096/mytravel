@@ -1,12 +1,10 @@
 .landingImage{
   background-image: url('HaLongBay.jpg');
   min-height: 380px;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh; 
-  /* Needed to position the navbar */
   position: relative;
   margin-top: 0px;
   padding: 0px;
@@ -17,7 +15,7 @@
 }
 
 .welcomeText{
-  font-size: 50px;
+  font-size: 30px;
   padding-top: 300px;
 }
 
@@ -30,4 +28,10 @@
 
 .landingPage-Script{
   font-size: 20px;
+}
+
+@media only screen and (min-width: 760px) {
+  .welcomeText{
+    font-size: 50px;
+  }
 }

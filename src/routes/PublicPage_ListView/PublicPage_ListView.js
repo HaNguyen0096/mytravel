@@ -5,6 +5,7 @@ import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
 import ViewBox from '../../components/ViewBox/ViewBox'
 import { getPublicLogs } from '../../components/Utils/Utils'
+import './PublicPage_ListView.css'
 
 export default class PublicPage_ListView extends Component {
   static defaultProps = {
@@ -33,8 +34,12 @@ export default class PublicPage_ListView extends Component {
   render() {
     const viewPath = this.props.match.path
     return (
-      <Section>
-        <ViewBox viewPath={viewPath}/>
+      <Section >
+        <div className='viewTop'>
+          <div className='viewBox'><ViewBox  viewPath={viewPath}/></div>
+          <div className='viewDescription'><h1>Explore beautiful places that people have visited!</h1></div>
+        </div>
+        
         {this.renderLogList()}
       </Section>
     )

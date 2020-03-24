@@ -25,9 +25,11 @@ export default class PublicPage_MapView extends Component {
     const {logs} = this.context
     const publicLogs = getPublicLogs(logs)
     return (
-      <Section>
-        <ViewBox viewPath={viewPath}/>
-        <h1 className='public-mapview-description'>Click on the pins to see beautiful places that people have visited!</h1>
+      <Section >
+        <div className='viewTop'>
+          <div className='viewBox'><ViewBox  viewPath={viewPath}/></div>
+          <div className='viewDescription'><h1>Click on the pins to see beautiful places that people have visited!</h1></div>
+        </div>
         {logs.length>0 && <MapView viewPath={viewPath} logs={publicLogs}/>}
       </Section>
     )

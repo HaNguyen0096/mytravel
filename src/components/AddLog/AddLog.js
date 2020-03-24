@@ -18,8 +18,7 @@ export default class AddLog extends Component {
         title: '',
         description: '',
         image: '',
-        rating: '',
-        setPrivate: '',
+        rating: ''
       }
       this.onDateChange = this.onDateChange.bind(this)
   }
@@ -47,23 +46,18 @@ export default class AddLog extends Component {
   updateRating(rating){
     this.setState({rating: rating})
   }
-
-  updateSetPrivate(setPrivate){
-    this.setState({setPrivate: setPrivate})
-  }
-
-
   
   static contextType = LogsContext
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { latitude, longitude, title, description, image, rating, setPrivate} = this.state
+    const { latitude, longitude, title, description, image, rating} = this.state
+    const {setPrivate} = ev.target
+    console.log(setPrivate.value)
     const lat = this.props.location ? this.props.location.latitude : latitude
     const lng = this.props.location ? this.props.location.longitude : longitude
-    console.log(lat)
     const visit_day = this.state.visit_day
-    ApiService.postLog(lat, lng, title, description, image, rating, visit_day, setPrivate)
+    ApiService.postLog(lat, lng, title, description, image, rating, visit_day, setPrivate.value)
       .then(this.context.addLog)
       .catch(this.context.setError)
     this.props.location && this.props.onClose()
@@ -108,6 +102,7 @@ export default class AddLog extends Component {
     const latitudeError = this.validateLatitude()
     const longitudeError = this.validateLongitude()
     const ratingError = this.validateRating()
+    console.log(this.state.setPrivate)
     return (
       <form
         className='logForm'
@@ -207,7 +202,6 @@ export default class AddLog extends Component {
           <div className='privateBox'>
             <label htmlFor='setPrivate'>Set Private:</label>
             <select className='setBox' id='setPrivate' name='setPrivate' 
-              onChange={e => this.updateSetPrivate(e.target.value)}
               required>            
               <option value='true'>Public</option>
               <option value='false'>Private</option>             

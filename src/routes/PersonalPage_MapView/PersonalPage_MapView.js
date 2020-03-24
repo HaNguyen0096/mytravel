@@ -24,8 +24,10 @@ export default class PersonalPage_MapView extends Component {
     const {logs} = this.context
     return (
       <Section>
-        <ViewBox viewPath={viewPath}/>
-        <h1 className='personal-mapview-description'>Double click on the pins to add a log</h1>
+        <div className='viewTop'>
+          <div className='viewBox'><ViewBox viewPath={viewPath}/></div>
+          <div className='viewDescription'><h1>Double click on the pins to add a log</h1></div>
+        </div>
         {logs.length>0 && <MapView viewPath={viewPath} logs={logs}/>}
       </Section>
     )
