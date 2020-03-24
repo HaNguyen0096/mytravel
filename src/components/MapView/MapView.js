@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactMapGL, {Marker, Popup} from 'react-map-gl'
-import  moment  from 'moment-timezone'
+import ViewLogBtn from '../ViewLogBtn/ViewLogBtn'
 import AddLog from '../AddLog/AddLog'
 import './MapView.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -76,9 +76,14 @@ function MapView(props) {
                   onClose={() => setShowPopup({})}
                   anchor='top' >
                   <div className='popup'>
-                    <h3>{log.title}</h3>
-                    <small>Visited on: {moment(log.visited_day).tz('America/New_York').format('MMMM Do YYYY')}</small>
+                    <div className='mapLogTitle'>
+                      <h3>{log.title}</h3>
+                    </div>
+                    <div ></div>
                     {log.image && <img className='mapImage' src={log.image} alt={log.title} />}
+                    <div className='Btn'>
+                      <ViewLogBtn id={log.id}/>
+                    </div>
                   </div>
                 </Popup>
               ) : null

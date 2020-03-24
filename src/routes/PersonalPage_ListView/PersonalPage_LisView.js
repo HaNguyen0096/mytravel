@@ -35,7 +35,7 @@ export default class PersonalPage_ListView extends Component {
       <Section>
         <div className='viewTop'>
           <div className='viewBox'><ViewBox  viewPath={viewPath}/></div>
-          <div className='viewDescription'><h1>See beautiful places that you have visited!</h1></div>
+          <div className='pageDescription'><h1>See beautiful places that you have visited!</h1></div>
         </div>
         {this.renderLogList()}
         <AddLogBtn className='AddLogBtn'/>

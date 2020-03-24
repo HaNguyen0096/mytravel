@@ -1,4 +1,11 @@
+.logPage{
+  margin-bottom: 10px;
+}
+.logDescription{
+  text-align: center;
+}
+
 .logPage-image{
-  height: 150px;
-  width: auto
+  height: 90%;
+  width: 90%;
 }

@@ -28,7 +28,7 @@ export default class PublicPage_MapView extends Component {
       <Section >
         <div className='viewTop'>
           <div className='viewBox'><ViewBox  viewPath={viewPath}/></div>
-          <div className='viewDescription'><h1>Click on the pins to see beautiful places that people have visited!</h1></div>
+          <div className='pageDescription'><h1>Click on the pins to see beautiful places that people have visited!</h1></div>
         </div>
         {logs.length>0 && <MapView viewPath={viewPath} logs={publicLogs}/>}
       </Section>

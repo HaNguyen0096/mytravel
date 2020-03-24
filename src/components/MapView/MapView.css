@@ -1,4 +1,18 @@
 .mapImage{
-  height: 50px;
+  height: 100px;
   width: auto;
+}
+
+.mapLogTitle{
+  text-align: center;
+}
+
+.Btn{
+  text-align: center;
+}
+
+@media only screen and (min-width: 760px) {
+  .mapImage{
+    height: 160px;
+  } 
 }

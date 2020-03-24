@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
+import  moment  from 'moment-timezone'
 import './LogPage.css'
 
 export default class LogPage extends Component {
@@ -29,12 +30,16 @@ export default class LogPage extends Component {
     
     return (
       <div className='logPage'>
-        <h1>{log && log.title}</h1>
-        <p>{log && log.description}</p>
-        <p> {log && log.visited_day}</p>
-        {log && log.image && <img className='logPage-image' src={log.image} alt='log.title'/>}
-        <button onClick={this.goBack}>Back</button>
+        <div className='logDescription'>
+          <h1>{log && log.title}</h1>
+          <p>{log && log.description}</p>
+          {log && <p>Visited on: {moment(log.visited_day).tz('America/New_York').format('MMMM Do YYYY')}</p>}
+          {log && <p>Rating : {log.rating}</p>}
+          {log && log.image && <img className='logPage-image' src={log.image} alt={log.title}/>}
+        </div>
+        <button className='backBtn' onClick={this.goBack}>Back</button>
       </div>
     );
   }
 }
+                
