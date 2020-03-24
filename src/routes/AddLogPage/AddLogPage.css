@@ -1,0 +1,14 @@
+.backBtn{
+  background-color: #4CAF50;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 4px;
+}
+
+.backBtn:hover{
+  background-color: #45a049;
+}

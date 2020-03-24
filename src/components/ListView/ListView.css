@@ -22,26 +22,19 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .logs{
-    background-color: #A9A9A9;
-    width: 70%;
-    display: block;
-    margin: 50px auto 50px auto ;
-    text-align: center;
-    border-style: double;
-  }
-  
   .logImage{
-    height: 300px;
-    width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-  }
-  
-  .Btn{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 160px;
+  } 
+}
+
+@media only screen and (min-width: 760px) { 
+  .logImage{
+    height: 250px;
+  } 
+}
+
+@media only screen and (min-width: 1000px) { 
+  .logImage{
+    height: 350px;
   }
 }

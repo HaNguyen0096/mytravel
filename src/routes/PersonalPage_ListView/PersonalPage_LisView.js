@@ -35,7 +35,7 @@ export default class PersonalPage_ListView extends Component {
       <Section>
         <ViewBox viewPath={viewPath}/>
         {this.renderLogList()}
-        <AddLogBtn />
+        <AddLogBtn className='AddLogBtn'/>
       </Section>
     )
   }

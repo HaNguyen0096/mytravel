@@ -6,7 +6,6 @@ export default class ListView extends Component{
   
   render(){
     const {log} = this.props
-    console.log(log)
     return (
       <div className='logs'>
         {log.image && <img className='logImage' src={log.image} alt={log.title}/>}

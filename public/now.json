@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "hanguyen-mytravels",
+  "name": "mytravels",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}

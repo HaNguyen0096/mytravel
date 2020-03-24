@@ -1,30 +1,69 @@
 import React, { Component } from 'react'
-// import {Select} from 'antd'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
+import ValidationError from '../ValidationError/ValidationError'
 import { Button, Textarea } from '../Utils/Utils'
 import {DatePicker} from 'antd'
 import './AddLog.css'
 
-// const {Option} = Select
 
 export default class AddLog extends Component {
 
   constructor(props){
     super(props)
-      this.state = {visit_day: ''}
+      this.state = {
+        visit_day: '',
+        latitude: '',
+        longitude: '',
+        title: '',
+        description: '',
+        image: '',
+        rating: '',
+        setPrivate: '',
+      }
       this.onDateChange = this.onDateChange.bind(this)
   }
+
+  updateLatitude(latitude){
+    this.setState({latitude: latitude})
+  }
+
+  updateLongitude(longitude){
+    this.setState({longitude: longitude})
+  }
+
+  updateTitle(title){
+    this.setState({title: title})
+  }
+
+  updateDescription(description){
+    this.setState({description: description})
+  }
+
+  updateImage(image){
+    this.setState({image: image})
+  }
+
+  updateRating(rating){
+    this.setState({rating: rating})
+  }
+
+  updateSetPrivate(setPrivate){
+    this.setState({setPrivate: setPrivate})
+  }
+
+
   
   static contextType = LogsContext
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { latitude, longitude, title, description, image, rating, publicc} = ev.target
-    const lat = this.props.location ? this.props.location.latitude : latitude.value
-    const lng = this.props.location ? this.props.location.longitude : longitude.value
+    const { latitude, longitude, title, description, image, rating, setPrivate} = this.state
+    const lat = this.props.location ? this.props.location.latitude : latitude
+    const lng = this.props.location ? this.props.location.longitude : longitude
+    console.log(lat)
     const visit_day = this.state.visit_day
-    ApiService.postLog(lat, lng, title.value, description.value, image.value, rating.value, visit_day, publicc.value)
+    ApiService.postLog(lat, lng, title, description, image, rating, visit_day, setPrivate)
       .then(this.context.addLog)
       .catch(this.context.setError)
     this.props.location && this.props.onClose()
@@ -35,37 +74,81 @@ export default class AddLog extends Component {
     this.setState({visit_day: visit_day})
   }
 
+  validateLatitude(){
+    const lat = this.state.latitude
+    if (isNaN(lat) === true){
+      return 'Please Enter A Number Between -90 and 90!'
+    }
+    else if (lat > 90 || lat < -90){
+      return 'Invalid Latitude'
+    }
+  }
+
+  validateLongitude(){
+    const lng = this.state.longitude
+    if (isNaN(lng) === true){
+      return 'Please Enter A Number Between -90 and 90!'
+    }
+    else if (lng > 90 || lng < -90){
+      return 'Invalid Longitude'
+    }
+  }
+
+  validateRating(){
+    const rating = this.state.rating
+    if (isNaN(rating) === true){
+      return 'Please Enter A Number Between 1 And 10!'
+    }
+    else if (rating > 10 || rating < 0){
+      return 'Invalid Rating'
+    }
+  }
+
   render() {
+    const latitudeError = this.validateLatitude()
+    const longitudeError = this.validateLongitude()
+    const ratingError = this.validateRating()
     return (
       <form
-        className='LogForm'
-        onSubmit= {this.handleSubmit}
-        
+        className='logForm'
+        onSubmit= {this.handleSubmit}        
       >
         <div className='addLog'>
-          <div className='addLatitude'>
-            {!this.props.location && <Textarea
-              required
-              aria-label='Latitude...'
-              name='latitude'
-              id='latitude'
-              cols='30'
-              rows='2'
-              placeholder='Latitude..'>
-            </Textarea>}
-          </div>
-          <div className='addLongitude'>
-            {!this.props.location && <Textarea
-              required
-              aria-label='longitude...'
-              name='longitude'
-              id='longitude'
-              cols='30'
-              rows='2'
-              placeholder='longitude..'>
-            </Textarea>}
-          </div>
+        {!this.props.location &&<div className='addCoordinate'>
+            <label htmlFor='coordinate'>Enter the latitude and longitude of the location (number between -90 and 90):</label>
+            <div className='addLatitude'>
+              <Textarea
+                required
+                type='number'
+                step='0.0000000001'
+                aria-label='Latitude...'
+                name='latitude'
+                id='latitude'
+                cols='30'
+                rows='2'
+                placeholder='insert latitude..'
+                onChange={e => this.updateLatitude(e.target.value)}>
+              </Textarea>
+              <ValidationError message={latitudeError}/>
+            </div>
+            <div className='addLongitude'>
+              <Textarea
+                required
+                type='number'
+                step='0.0000000001'
+                aria-label='longitude...'
+                name='longitude'
+                id='longitude'
+                cols='30'
+                rows='2'
+                placeholder='insert longitude..'
+                onChange={e => this.updateLongitude(e.target.value)}>
+              </Textarea>
+              <ValidationError message={longitudeError}/>
+            </div>
+          </div>}
           <div className='addTitle'>
+            <label htmlFor='title'>Title:</label>
             <Textarea
               required
               aria-label='title...'
@@ -73,10 +156,12 @@ export default class AddLog extends Component {
               id='title'
               cols='30'
               rows='2'
-              placeholder='title..'>
+              placeholder='insert title..'
+              onChange={e => this.updateTitle(e.target.value)}>
             </Textarea>
           </div>
           <div className='addDescription'>
+            <label htmlFor='description'>Description:</label>
             <Textarea
               required
               aria-label='description...'
@@ -84,43 +169,60 @@ export default class AddLog extends Component {
               id='description'
               cols='30'
               rows='2'
-              placeholder='description..'>
+              placeholder='insert description..'
+              onChange={e => this.updateDescription(e.target.value)}>
             </Textarea>
           </div>
           <div className='addImage'>
-            <Textarea
-              
+            <label htmlFor='image'>Image (Please insert a link to your image):</label>
+            <Textarea             
               aria-label='image...'
               name='image'
               id='image'
               cols='30'
               rows='2'
-              placeholder='image..'>
+              placeholder='insert image..'
+              onChange={e => this.updateImage(e.target.value)}>
             </Textarea>
           </div>
           <div className='addRating'>
+            <label htmlFor='rating'>Rating (Enter a number between 1 and 10):</label>
             <Textarea
               required
+              type='number'
               aria-label='rating...'
               name='rating'
               id='rating'
               cols='30'
               rows='2'
-              placeholder='rating..'>
+              placeholder='insert rating..'
+              onChange={e => this.updateRating(e.target.value)}>
             </Textarea>
-          <DatePicker onChange={this.onDateChange} name='visit_day'/>
+            <ValidationError message={ratingError}/>
           </div>
-          <div className='PrivateBox'>
-            <select id='publicc' name='publicc' required>            
+          <div className='addDate'>
+            <label htmlFor='visitDate'>Visited Date:</label>
+            <DatePicker className='visitDate' onChange={this.onDateChange} name='visit_day'/>
+          </div>
+          <div className='privateBox'>
+            <label htmlFor='setPrivate'>Set Private:</label>
+            <select className='setBox' id='setPrivate' name='setPrivate' 
+              onChange={e => this.updateSetPrivate(e.target.value)}
+              required>            
               <option value='true'>Public</option>
-              <option value='false'>Private</option>
-              
+              <option value='false'>Private</option>             
             </select> 
           </div>
         </div>
-        
-
-        <Button type='submit' className='postLogBtn'>
+        <Button 
+          type='submit' 
+          className='postLogBtn'
+          disabled={
+            this.validateLatitude() ||
+            this.validateLongitude() ||
+            this.validateRating()
+          }
+        >
           Add Log
         </Button>
       </form>

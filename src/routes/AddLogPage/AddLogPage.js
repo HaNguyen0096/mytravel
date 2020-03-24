@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AddLog from '../../components/AddLog/AddLog'
+import './AddLogPage.css'
 
 export default class AddLogPage extends Component {
   static defaultProps = {
@@ -16,7 +17,7 @@ export default class AddLogPage extends Component {
     return (
       <div className='logPage'>
         <AddLog />
-        <button onClick={this.goBack}>Back</button>
+        <button className='backBtn' onClick={this.goBack}>Back</button>
       </div>
     );
   }
