@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders Header by default 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="loginNav"
+    >
+      <div
+        className="title"
+      >
+        My Travels
+      </div>
+      <div>
+        <Link
+          className="home-nav"
+          to="/"
+        >
+          Home
+        </Link>
+        <Link
+          className="public-nav"
+          to="/public/mapview"
+        >
+          Public Logs
+        </Link>
+        <Link
+          className="my-nav"
+          to="/mylogs/mapview"
+        >
+          My Logs
+        </Link>
+      </div>
+    </div>
+  </div>
+  <nav
+    className="navBar"
+  />
+</div>
+`;
+
+exports[`Header component renders the UI for Header as expected 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="loginNav"
+    >
+      <div
+        className="title"
+      >
+        My Travels
+      </div>
+      <div>
+        <a
+          className="home-nav"
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+        <a
+          className="public-nav"
+          href="/public/mapview"
+          onClick={[Function]}
+        >
+          Public Logs
+        </a>
+        <a
+          className="my-nav"
+          href="/mylogs/mapview"
+          onClick={[Function]}
+        >
+          My Logs
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav
+    className="navBar"
+  />
+</div>
+`;

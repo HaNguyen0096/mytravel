@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddLogBtn component renders AddLogBtn by default 1`] = `
+<div
+  className="addLogBtn"
+>
+  <Button
+    block={false}
+    ghost={false}
+    htmlType="button"
+    loading={false}
+    type="primary"
+  >
+    <Link
+      to="/addlog"
+    >
+      Add New Log
+    </Link>
+  </Button>
+</div>
+`;
+
+exports[`AddLogBtn component renders the UI for AddLogBtn as expected 1`] = `
+<div
+  className="addLogBtn"
+>
+  <button
+    className="ant-btn ant-btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    <a
+      href="/addlog"
+      onClick={[Function]}
+    >
+      Add New Log
+    </a>
+  </button>
+</div>
+`;

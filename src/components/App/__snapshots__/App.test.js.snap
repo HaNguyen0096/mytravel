@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App by default 1`] = `
+<Fragment>
+  <div
+    className="App"
+  >
+    <header
+      className="App__header"
+    >
+      <Header />
+    </header>
+    <main
+      className="App__main"
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/public/mapview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/public/listview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/mylogs/mapview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/mylogs/listview"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/logs/:id"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/addlog"
+        />
+        <Route
+          component={[Function]}
+        />
+      </Switch>
+    </main>
+  </div>
+</Fragment>
+`;
+
+exports[`App component renders the UI for App as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App__header"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="loginNav"
+        >
+          <div
+            className="title"
+          >
+            My Travels
+          </div>
+          <div>
+            <a
+              className="home-nav"
+              href="/"
+              onClick={[Function]}
+            >
+              Home
+            </a>
+            <a
+              className="public-nav"
+              href="/public/mapview"
+              onClick={[Function]}
+            >
+              Public Logs
+            </a>
+            <a
+              className="my-nav"
+              href="/mylogs/mapview"
+              onClick={[Function]}
+            >
+              My Logs
+            </a>
+          </div>
+        </div>
+      </div>
+      <nav
+        className="navBar"
+      />
+    </div>
+  </header>
+  <main
+    className="App__main"
+  >
+    <div
+      className="landingImage"
+    >
+      <section
+        className="Section"
+      >
+        <div
+          className="landingPage"
+        >
+          <div
+            className="welcomeText"
+          >
+            Welcome to My Travels
+          </div>
+          <hr
+            className="hrLine"
+          />
+          <p
+            className="landingPage-Script"
+          >
+            Let's create your own Travels Logs and explore amazing places around the world!
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+`;

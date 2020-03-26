@@ -26,7 +26,7 @@ export default class PersonalPage_MapView extends Component {
       <Section>
         <div className='viewTop'>
           <div className='viewBox'><ViewBox viewPath={viewPath}/></div>
-          <div className='pageDescription'><h1>Double click on the pins to add a log</h1></div>
+          <div className='pageDescription'><h1>Double click on the map to add a log</h1></div>
         </div>
         {logs.length>0 && <MapView viewPath={viewPath} logs={logs}/>}
       </Section>

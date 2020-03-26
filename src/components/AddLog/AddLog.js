@@ -4,6 +4,7 @@ import ApiService from '../../services/api'
 import ValidationError from '../ValidationError/ValidationError'
 import { Button, Textarea } from '../Utils/Utils'
 import {DatePicker} from 'antd'
+import { Link } from 'react-router-dom'
 import './AddLog.css'
 
 
@@ -53,7 +54,6 @@ export default class AddLog extends Component {
     ev.preventDefault()
     const { latitude, longitude, title, description, image, rating} = this.state
     const {setPrivate} = ev.target
-    console.log(setPrivate.value)
     const lat = this.props.location ? this.props.location.latitude : latitude
     const lng = this.props.location ? this.props.location.longitude : longitude
     const visit_day = this.state.visit_day
@@ -98,11 +98,18 @@ export default class AddLog extends Component {
     }
   }
 
+  validateVisitedDay(){
+    const visited_day = this.state.visit_day
+    if (!visited_day&&this.state.rating){
+      return 'Please Pick a Date'
+    }
+  }
+
   render() {
     const latitudeError = this.validateLatitude()
     const longitudeError = this.validateLongitude()
     const ratingError = this.validateRating()
-    console.log(this.state.setPrivate)
+    const visitDayError = this.validateVisitedDay()
     return (
       <form
         className='logForm'
@@ -197,7 +204,8 @@ export default class AddLog extends Component {
           </div>
           <div className='addDate'>
             <label htmlFor='visitDate'>Visited Date:</label>
-            <DatePicker className='visitDate' onChange={this.onDateChange} name='visit_day'/>
+            <DatePicker required={true} className='visitDate' onChange={this.onDateChange} name='visit_day'/>
+            <ValidationError message={visitDayError}/>
           </div>
           <div className='privateBox'>
             <label htmlFor='setPrivate'>Set Private:</label>
@@ -214,7 +222,8 @@ export default class AddLog extends Component {
           disabled={
             this.validateLatitude() ||
             this.validateLongitude() ||
-            this.validateRating()
+            this.validateRating() ||
+            this.validateVisitedDay()
           }
         >
           Add Log

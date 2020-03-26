@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapView component renders MapView by default 1`] = `
+<InteractiveMap
+  altitude={1.5}
+  asyncRender={false}
+  attributionControl={true}
+  bearing={0}
+  className=""
+  clickRadius={0}
+  container={<body />}
+  disableTokenWarning={false}
+  doubleClickZoom={true}
+  dragPan={true}
+  dragRotate={true}
+  getCursor={[Function]}
+  height="100vh"
+  keyboard={true}
+  latitude={42}
+  longitude={-71}
+  mapOptions={Object {}}
+  mapStyle="mapbox://styles/mapbox/light-v8"
+  mapboxApiAccessToken="pk.eyJ1IjoiaGFuZ3V5ZW45NiIsImEiOiJjazd2Y3B1MjgwYzk0M2VwY3NxdXM3cDhoIn0.x7HcFQ5ULW_x2mLUqgvs4w"
+  mapboxApiUrl="https://api.mapbox.com"
+  maxPitch={60}
+  maxZoom={24}
+  minPitch={0}
+  minZoom={0}
+  onClick={null}
+  onContextMenu={[Function]}
+  onDblClick={[Function]}
+  onError={[Function]}
+  onHover={null}
+  onLoad={[Function]}
+  onNativeClick={null}
+  onResize={[Function]}
+  onStateChange={[Function]}
+  onTransitionEnd={[Function]}
+  onTransitionInterrupt={[Function]}
+  onTransitionStart={[Function]}
+  onViewStateChange={null}
+  onViewportChange={[Function]}
+  pitch={0}
+  preserveDrawingBuffer={false}
+  preventStyleDiffing={false}
+  reuseMaps={false}
+  scrollZoom={true}
+  style={null}
+  touchAction="none"
+  touchRotate={false}
+  touchZoom={true}
+  transitionDuration={0}
+  transitionEasing={[Function]}
+  transitionInterpolator={
+    LinearInterpolator {
+      "around": undefined,
+      "propNames": Array [
+        "longitude",
+        "latitude",
+        "zoom",
+        "bearing",
+        "pitch",
+      ],
+    }
+  }
+  transitionInterruption={1}
+  visibilityConstraints={
+    Object {
+      "maxPitch": 60,
+      "maxZoom": 24,
+      "minPitch": 0,
+      "minZoom": 0,
+    }
+  }
+  visible={true}
+  width="100vw"
+  zoom={8}
+>
+  <Marker
+    captureClick={true}
+    captureDoubleClick={true}
+    captureDrag={true}
+    captureScroll={false}
+    className=""
+    draggable={false}
+    key="1"
+    latitude={42.3554}
+    longitude={-71.064}
+    offsetLeft={-12}
+    offsetTop={-24}
+  >
+    <div
+      onClick={[Function]}
+    >
+      <svg
+        className="marker"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "height": "24px",
+            "width": "24px",
+          }
+        }
+      >
+        <path
+          d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+        />
+        <circle
+          cx="12"
+          cy="10"
+          r="3"
+        />
+      </svg>
+    </div>
+  </Marker>
+  <Marker
+    captureClick={true}
+    captureDoubleClick={true}
+    captureDrag={true}
+    captureScroll={false}
+    className=""
+    draggable={false}
+    key="2"
+    latitude={48.8584}
+    longitude={2.2945}
+    offsetLeft={-12}
+    offsetTop={-24}
+  >
+    <div
+      onClick={[Function]}
+    >
+      <svg
+        className="marker"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "height": "24px",
+            "width": "24px",
+          }
+        }
+      >
+        <path
+          d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+        />
+        <circle
+          cx="12"
+          cy="10"
+          r="3"
+        />
+      </svg>
+    </div>
+  </Marker>
+</InteractiveMap>
+`;
+
+exports[`MapView component renders the UI for MapView as expected 1`] = `
+<div
+  style={
+    Object {
+      "cursor": "grab",
+      "height": 0,
+      "position": "relative",
+      "width": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "absolute",
+          "visibility": "inherit",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": 0,
+          "overflow": "visible",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;

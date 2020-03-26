@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Travels App
 
-## Available Scripts
+Live: https://hanguyen-mytravels.now.sh/
 
-In the project directory, you can run:
+This is a Travel Logs App that help users to saved all the travel logs they created. And also alow them to view other people travel logs. Users can see all the logs in form of Map View or List View.
 
-### `npm start`
+### API Documentation: 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- ##### GET /api/logs
 
-### `npm test`
+    Return all logs created
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###### Example response
 
-### `npm run build`
+    [
+        {
+            id: 1,
+            latitude: '42.3554',
+            longitude: '-71.0640',
+            title: 'Boston Common',
+            description: 'This is a beautiful place',
+            image: 'https://en.wikipedia.org/wiki/File:Aerial_View_Parkman_Bandstand_at_Boston_Common.jpg',
+            rating: 10,
+            visited_day: '2020-03-18T07:55:12.825Z',
+            public: false,
+            date_created: '2020-03-18T07:55:12.825Z',
+        },
+        {
+            id: 2,
+            latitude: '48.8584',
+            longitude: '2.2945',
+            title: 'Eiffel Tower',
+            description: 'The tower is so tall',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg',
+            rating: 10,
+            visited_day: '2020-03-18T07:55:12.825Z',
+            public: true,
+            date_created: '2020-03-18T07:55:12.825Z'
+        },
+    ]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- ##### GET /api/logs/${logId}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Return a log with a specific id
 
-### `npm run eject`
+- ##### POST /api/logs
+   
+    Post a log
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+###### Example request
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    {
+        latitude: '48.8584',
+        longitude: '2.2945',
+        title: 'Eiffel Tower',
+        description: 'The tower is so tall',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg',
+        rating: 10,
+        visited_day: '2020-03-18T07:55:12.825Z',
+        public: true,
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- ##### DELETE /api/logs/${logId}
 
-## Learn More
+    Delete a Log. If no log could be found by logId , the server responds with a status 400.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Preview:
 
-### Code Splitting
+Landing Page
+![](mytravels-preview.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Map View Page
+![](mytravels-mapview.png)
 
-### Analyzing the Bundle Size
+List View Page
+![](mytravels-listview.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Tech Stack
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    Front-end: HTML, CSS, Javascript, React
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    Back-end: Node.js, Express, PostgresSQL

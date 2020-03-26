@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-//import ApiService from '../../services/api-service'
 import {Section} from '../../components/Utils/Utils'
 import './LandingPage.css'
 

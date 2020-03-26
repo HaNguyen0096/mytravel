@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewLogBtn component renders ViewLogBtn by default 1`] = `
+<div>
+  <Button
+    block={false}
+    className="Btn"
+    ghost={false}
+    htmlType="button"
+    loading={false}
+    type="primary"
+  >
+    <Link
+      to="/logs/undefined"
+    >
+      View More
+    </Link>
+  </Button>
+</div>
+`;
+
+exports[`ViewLogBtn component renders the UI for ViewLogBtn as expected 1`] = `
+<div>
+  <button
+    className="ant-btn Btn ant-btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    <a
+      href="/logs/undefined"
+      onClick={[Function]}
+    >
+      View More
+    </a>
+  </button>
+</div>
+`;

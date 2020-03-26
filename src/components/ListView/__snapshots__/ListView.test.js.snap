@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView component renders ListView by default 1`] = `
+<div
+  className="logs"
+>
+  <h1 />
+  <div
+    className="Btn"
+  >
+    <ViewLogBtn />
+  </div>
+</div>
+`;
+
+exports[`ListView component renders the UI for ListView as expected 1`] = `
+<div
+  className="logs"
+>
+  <h1 />
+  <div
+    className="Btn"
+  >
+    <div>
+      <button
+        className="ant-btn Btn ant-btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <a
+          href="/logs/undefined"
+          onClick={[Function]}
+        >
+          View More
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+`;

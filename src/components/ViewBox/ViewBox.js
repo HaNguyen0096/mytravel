@@ -9,12 +9,12 @@ export default class ViewBox extends Component {
   publicOption() {
     return (
       <div className='viewBox'>
-        <Select defaultValue='MapView' 
+        <Select defaultValue='Select View' 
         style={{ width: 120 }} 
         onChange={this.handleChange}
       >
-        <Option value='mapview'><Link to='/public/mapview'>MapView</Link></Option>
-        <Option value='listview'><Link to='/public/listview'>ListView</Link></Option>
+        <Option className='box' value='mapview'><Link className='textBox' to='/public/mapview'>Map View</Link></Option>
+        <Option className='box' value='listview'><Link className='textBox' to='/public/listview'>List View</Link></Option>
       
       </Select> 
       </div>
@@ -24,13 +24,12 @@ export default class ViewBox extends Component {
   personalOption() {
     return (
       <div className='viewBox'>
-        <Select defaultValue='MapView' 
-        style={{ width: 120 }} 
-        onChange={this.handleChange}
+        <Select defaultValue='Select View' 
+        style={{ width: 520 }} 
+        onChange={this.handleChange}     
       >
-        <Option value='mapview'><Link to='/mylogs/mapview'>MapView</Link></Option>
-        <Option value='listview'><Link to='/mylogs/listview'>ListView</Link></Option>
-      
+        <Option className='box' value='mapview'><Link className='textBox' to='/mylogs/mapview'>Map View</Link></Option>
+        <Option className='box' value='listview'><Link className='textBox' to='/mylogs/listview'>List View</Link></Option>      
       </Select> 
       </div>
     )
