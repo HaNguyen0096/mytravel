@@ -8,9 +8,11 @@ import PersonalPage_MapView from '../../routes/PersonalPage_MapView/PersonalPage
 import PersonalPage_ListView from '../../routes/PersonalPage_ListView/PersonalPage_LisView'
 import LogPage from '../../routes/LogPage/LogPage'
 import AddLogPage from '../../routes/AddLogPage/AddLogPage'
-//import LoginPage from '../../routes/LoginPage/LoginPage'
-//import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicRoute from '../Utils/PublicRoute'
 
 //import Footer from '../Footer/Footer';
 //import './App.css'
@@ -43,32 +45,42 @@ class App extends Component {
               path={'/'}
               component={LandingPage}
             />
-            <Route
+            <PublicRoute 
+              exact
+              path={'/login'}
+              component={LoginPage}
+            />
+            <PublicRoute 
+              exact
+              path={'/register'}
+              component={RegistrationPage}
+            />
+            <PublicRoute
               exact
               path={'/public/mapview'}
               component={PublicPage_MapView}
             />
-            <Route
+            <PublicRoute
               exact
               path={'/public/listview'}
               component={PublicPage_ListView}
             />
-            <Route
+            <PrivateRoute
               exact
               path={'/mylogs/mapview'}
               component={PersonalPage_MapView}
             /> 
-            <Route
+            <PrivateRoute
               exact
               path={'/mylogs/listview'}
               component={PersonalPage_ListView}
             />
-            <Route
+            <PrivateRoute
               exact
               path={'/logs/:id'}
               component={LogPage}
             /> 
-            <Route
+            <PrivateRoute
               exact
               path={'/addlog'}
               component={AddLogPage}

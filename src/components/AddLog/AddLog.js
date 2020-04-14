@@ -4,7 +4,6 @@ import ApiService from '../../services/api'
 import ValidationError from '../ValidationError/ValidationError'
 import { Button, Textarea } from '../Utils/Utils'
 import {DatePicker} from 'antd'
-import { Link } from 'react-router-dom'
 import './AddLog.css'
 
 

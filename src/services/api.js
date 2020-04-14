@@ -1,4 +1,5 @@
 import config from '../config'
+import TokenService from '../services/token-service'
 
 const ApiService = {
   getLogs() {
@@ -16,6 +17,7 @@ const ApiService = {
   getLog(logId) {
     return fetch(`${config.API_ENDPOINT}/logs/${logId}`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(logRes =>
@@ -29,7 +31,8 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/logs`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         latitude,
