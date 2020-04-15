@@ -33,9 +33,9 @@ class App extends Component {
     return(
       < >
         <div className='App'>
-        <header className='App__header'>
-          <Header />
-        </header>
+          <header className='App__header'>
+            <Header />
+          </header>
         <main className='App__main'>
         {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           {
@@ -55,12 +55,12 @@ class App extends Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <PublicRoute
+            <Route
               exact
               path={'/public/mapview'}
               component={PublicPage_MapView}
             />
-            <PublicRoute
+            <Route
               exact
               path={'/public/listview'}
               component={PublicPage_ListView}

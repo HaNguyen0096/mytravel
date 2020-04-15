@@ -22,6 +22,7 @@ export default class PersonalPage_MapView extends Component {
   render(){
     const viewPath = this.props.match.path
     const {logs} = this.context
+    console.log(logs)
     return (
       <Section>
         <div className='viewTop'>

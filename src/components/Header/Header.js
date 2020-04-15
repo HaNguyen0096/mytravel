@@ -7,12 +7,14 @@ export default class Header extends Component{
 
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
+    window.location.reload()
   }
 
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
-        <Link
+        {console.log('logged in')}
+        <Link className='logout-nav'
           onClick={this.handleLogoutClick}
           to='/'>
           Logout
@@ -24,11 +26,12 @@ export default class Header extends Component{
   renderLoginLink() {
     return (
       <div className='Header__not-logged-in'>
-        <Link
+        {console.log('not in')}
+        <Link className='login-nav'
           to='/login'>
           Log in
         </Link>
-        <Link
+        <Link className='register-nav' 
           to='/register'>
           Register
         </Link>
@@ -38,7 +41,7 @@ export default class Header extends Component{
 
   renderLogs(){
     return (
-      <div>
+      <nav className='myNav'>
           <Link className='home-nav'
             to='/'>
             Home
@@ -51,25 +54,24 @@ export default class Header extends Component{
             to='/mylogs/mapview'>
             My Logs
           </Link>
-          {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
-      </div>
+      </nav>
     )
   }
 
   render(){
-    
     return (
       <div className='header'>
+        <div className='title'>My Travels</div>
         <div className='container'>
-          <div className='loginNav'>
-            <div className='title'>My Travels</div>
+          <div className='logStatus'>
+            {TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()}
+          </div>
+          <div className='navbar'>
             {this.renderLogs()}
           </div>
         </div>
-        <nav className='navBar'>
-        </nav>
       </div>
     )
   }

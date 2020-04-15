@@ -3,26 +3,66 @@
 }
 
 .header{
-  margin: 0;
-}
-
-.title{
-  margin-left: 10px;
-}
-
-.loginNav{
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: rgb(32,207,116);
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
   padding: 0;
 }
 
+.title{
+  display: flex;
+  justify-self: flex-start;
+  margin-left: 2px;
+}
+
+.container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Header__not-logged-in{
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-nav{
+  text-decoration: none;
+  margin-right: 6px;
+  color: black;
+}
+
+.login-nav:hover{
+  background-color: #ddd;
+  color: #0C0C5C;
+}
+
+.register-nav{
+  text-decoration: none;
+  margin-right: 6px;
+  color: black;
+}
+
+.logout-nav{
+  text-decoration: none;
+  margin-right: 6px;
+  color: black;
+}
+
+.logout-nav:hover{
+  background-color: #ddd;
+  color: #0C0C5C;
+}
+
+.register-nav:hover{
+  background-color: #ddd;
+  color: #0C0C5C;
+}
+
 .home-nav{
   text-decoration: none;
-  margin: 6px;
+  margin-right: 6px;
   color: black;
 }
 
@@ -33,7 +73,7 @@
 
 .public-nav{
   text-decoration: none;
-  margin: 6px;
+  margin-right: 6px;
   color: black;
 }
 
@@ -44,7 +84,7 @@
 
 .my-nav{
   text-decoration: none;
-  margin: 6px;
+  margin-right: 6px;
   color: black;
 }
 
@@ -53,33 +93,58 @@
   color: #0C0C5C;
 }
 
+
 @media only screen and (min-width: 480px) {
-  .loginNav{
+  .container{
     font-size: 20px;
   }
+  .title{
+    font-size: 20px;
+  }
+  .login-nav{
+    margin-right: 8px;
+  }
+  .register-nav{
+    margin-right: 8px;
+  }
+  .logout-nav{
+    margin-right: 8px;
+  }
   .home-nav{
-    margin: 8px;
+    margin-right: 8px;
   }
   .public-nav{
-    margin: 8px;
+    margin-right: 8px;
   }
   .my-nav{
-    margin: 8px;
+    margin-right: 8px;
   }
 }
 
 @media only screen and (min-width: 760px) {
-  .loginNav{
-    font-size: 25px;
+  .container{
+    font-size: 30px;
+  }
+  .title{
+    font-size: 30px;
+  }
+  .login-nav{
+    margin-right: 15px;
+  }
+  .register-nav{
+    margin-right: 15px;
+  }
+  .logout-nav{
+    margin-right: 15px;
   }
   .home-nav{
-    margin: 15px;
+    margin-right: 15px;
   }
   .public-nav{
-    margin: 15px;
+    margin-right: 15px;
   }
   .my-nav{
-    margin: 15px;
+    margin-right: 15px;
   }
 }
 
