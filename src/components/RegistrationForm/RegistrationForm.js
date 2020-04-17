@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
+import './RegistrationForm.css'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -34,7 +35,7 @@ export default class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <form
-        className='RegistrationForm'
+        className='registrationForm'
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
