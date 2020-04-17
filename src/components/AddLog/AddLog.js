@@ -80,9 +80,9 @@ export default class AddLog extends Component {
   validateLongitude(){
     const lng = this.state.longitude
     if (isNaN(lng) === true){
-      return 'Please Enter A Number Between -90 and 90!'
+      return 'Please Enter A Number Between -180 and 180!'
     }
-    else if (lng > 90 || lng < -90){
+    else if (lng > 180 || lng < -180){
       return 'Invalid Longitude'
     }
   }
