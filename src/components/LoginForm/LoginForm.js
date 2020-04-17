@@ -8,12 +8,12 @@ export default class LoginForm extends Component {
     onLoginSuccess: () => {}
   }
 
-  state = { error: null }
+  state = { error: null}
 
   handleSubmitBasicAuth = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
-
+    console.log(user_name)
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(user_name.value, password.value)
     )

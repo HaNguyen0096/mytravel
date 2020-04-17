@@ -11,9 +11,9 @@ function MapView(props) {
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
-    latitude: 42,
-    longitude: -71,
-    zoom: 8
+    latitude: 44.58,
+    longitude: -103.46,
+    zoom: 3.5
   });
 
   const showAddMarkerPopup = (event) => {

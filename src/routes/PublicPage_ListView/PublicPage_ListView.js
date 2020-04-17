@@ -4,7 +4,6 @@ import { Section } from '../../components/Utils/Utils'
 import LogsContext from '../../contexts/LogsContext'
 import ApiService from '../../services/api'
 import ViewBox from '../../components/ViewBox/ViewBox'
-import { getPublicLogs } from '../../components/Utils/Utils'
 import './PublicPage_ListView.css'
 
 export default class PublicPage_ListView extends Component {
@@ -15,15 +14,14 @@ export default class PublicPage_ListView extends Component {
 
 
   componentDidMount(){
-    ApiService.getLogs()
+    ApiService.getPublicLogs()
       .then(this.context.setLogs)
       .catch(this.context.setError)
   }
 
   renderLogList(){
     const {logs} = this.context 
-    const publicLogs = getPublicLogs(logs)
-    return publicLogs.map(log =>
+    return logs.map(log =>
       <ListView 
         key = {log.id}
         log = {log}

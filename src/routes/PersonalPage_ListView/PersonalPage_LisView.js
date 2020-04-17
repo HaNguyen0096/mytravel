@@ -14,7 +14,7 @@ export default class PersonalPage_ListView extends Component {
 
 
   componentDidMount(){
-    ApiService.getLogs()
+    ApiService.getLogsForUser()
       .then(this.context.setLogs)
       .catch(this.context.setError)
   }

@@ -27,6 +27,32 @@ const ApiService = {
       )     
   },
 
+  getLogsForUser() {
+    return fetch(`${config.API_ENDPOINT}/logs/userlogs`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(logRes =>
+        (!logRes.ok)
+          ? logRes.json().then(e => Promise.reject(e))
+          : logRes.json()
+      )     
+  },
+
+  getPublicLogs(){
+    return fetch(`${config.API_ENDPOINT}/logs/publiclogs`, {
+      headers: {
+      },
+    })
+    .then(logRes => 
+      (!logRes.ok)
+      ? logRes.json().then(e => Promise.reject(e))
+      : logRes.json()
+      )
+  },
+
+
   postLog(latitude, longitude, title, description, image, rating, visited_day, publicc) {
     return fetch(`${config.API_ENDPOINT}/logs`, {
       method: 'POST',
